@@ -7,13 +7,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class AccueilController extends AbstractController
+class PrestationController extends AbstractController
 {
-    #[Route('/', name: 'app_accueil')]
+    #[Route('/prestation', name: 'app_prestation')]
     public function index(): Response
     {
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+        return $this->render('prestation/index.html.twig', [
+            'controller_name' => 'PrestationController',
         ]);
     }
 }
