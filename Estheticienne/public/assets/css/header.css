@@ -1,16 +1,30 @@
-.container_navbar {  display: grid;
+.container_navbar_disconnect { 
+    display: grid;
     grid-template-columns: 2% 7% 2% 10% 2% 10% 2% 10% 2% 10% 2% 10% 14% 15% 2%;
     grid-template-rows: 80px;
     grid-auto-columns: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "empty1 img empty2 btn-accueil empty3 btn-produits empty4 btn-prestation empty5 btn-avis empty6 btn-contact empty7 connexion empty8";
+        "empty1 img empty2 btn-accueil empty3 btn-produits empty4 btn-prestation empty5 btn-avis empty6 btn-contact empty7 deconnexion empty8";
+    background-color: #D89E9D;
+    width: 100%;
+}
+
+.container_navbar_connect {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 2% 7% 2% 10% 2% 10% 2% 10% 2% 10% 2% 10% 7% 10% 2% 10% 2%; 
+    grid-template-rows: 80px; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "empty1 img empty2 btn-accueil empty3 btn-produits empty4 btn-prestation empty5 btn-avis empty6 btn-contact empty7 connexion empty8 inscription empty9"; 
     background-color: #D89E9D;
     width: 100%;
 }
   
-.btn-accueil { grid-area: btn-accueil; }
+.btn-accueil { grid-area: btn-accueil; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.btn-accueil:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
 
 .empty2 { grid-area: empty2; }
 
@@ -28,32 +42,51 @@
   
 .empty3 { grid-area: empty3; }
 
-.btn-produits { grid-area: btn-produits; }
+.btn-produits { grid-area: btn-produits; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.btn-produits:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
 
 .empty4 { grid-area: empty4; }
 
-.btn-prestation { grid-area: btn-prestation; }
+.btn-prestation { grid-area: btn-prestation; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.btn-prestation:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
 
 .empty5 { grid-area: empty5; }
 
-.btn-avis { grid-area: btn-avis; }
+.btn-avis { grid-area: btn-avis; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.btn-avis:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
 
 .empty6 { grid-area: empty6; }
 
-.btn-contact { grid-area: btn-contact; }
+.btn-contact { grid-area: btn-contact; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.btn-contact:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
 
 .empty7 { grid-area: empty7; }
 
-.connexion { grid-area: connexion; }
+.connexion { grid-area: connexion; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.connexion:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
+.deconnexion { grid-area: deconnexion; background-color: #d65957; transition: ease-in-out; transition-duration: 0.5s;}
+.deconnexion:hover {background-color: #c2413f; transition: ease-in-out; transition-duration: 0.5s;}
 
 .empty8 { grid-area: empty8; }
+
+.inscription { grid-area: inscription; background-color: #ca9594; transition: ease-in-out; transition-duration: 0.5s; }
+.inscription:hover { background-color: #ac7d7c; transition: ease-in-out; transition-duration: 0.5s;}
+
+.empty9 { grid-area: empty9; }
   
 
 a {
     color: white;
     font-family: "Agbalumo", system-ui;
     font-weight: 400;
+    font-size: x-large;
     font-style: normal;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: none;
 }
 
 
