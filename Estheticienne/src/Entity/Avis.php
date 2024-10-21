@@ -22,6 +22,9 @@ class Avis
     #[ORM\Column(type: Types::TEXT)]
     private ?string $texte = null;
 
+    #[ORM\Column]
+    private ?int $categorie = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,6 +50,18 @@ class Avis
     public function setTexte(string $texte): static
     {
         $this->texte = $texte;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?int
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(int $categorie): static
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
