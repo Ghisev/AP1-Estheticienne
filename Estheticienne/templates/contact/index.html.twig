@@ -7,14 +7,6 @@
         <h1>CONTACT</h1>
         <p>--------------------------------------</p>
 
-        {# Afficher les messages flash #}
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-        {% for message in app.flashes('error') %}
-            <div class="alert alert-danger">{{ message }}</div>
-        {% endfor %}
-
         {% if is_granted('ROLE_ADMIN') %}
             {% for contact in contacts %}
                 <li class="nom">{{ contact.nom }} {{ contact.prenom }}</li>
