@@ -22,6 +22,9 @@ class Prestation
     #[ORM\Column]
     private ?int $categorie = null;
 
+    #[ORM\Column]
+    private ?int $categorie_img = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Prestation
     public function setCategorie(int $categorie): static
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getCategorieImg(): ?int
+    {
+        return $this->categorie_img;
+    }
+
+    public function setCategorieImg(int $categorie_img): static
+    {
+        $this->categorie_img = $categorie_img;
 
         return $this;
     }
