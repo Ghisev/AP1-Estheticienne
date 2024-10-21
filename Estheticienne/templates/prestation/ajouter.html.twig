@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une prestation{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/header.css">
+
+<div class="container_page_presta">
+    
+
+    {{ form_start(formAjouterPrestation) }}
+
+    <div class="container_ajouter_prestation">
+        <div class="titre">
+            <h2 class="titre_add_presta agbalumo400">Ajouter une prestation</h2>
+        </div>
+
+        <div class="libelle">
+            <label for="libelle">Libellé de la prestation :</label>
+            {{ form_widget(formAjouterPrestation.libelle) }}
+        </div>
+
+        <div class="categorie">
+            <label for="categorie">Catégorie :</label>
+            {{ form_widget(formAjouterPrestation.categorie) }}
+        </div>
+
+        <div class="categorie_img">
+            <label for="categorie_img">Image de la prestation :</label>
+            {{ form_widget(formAjouterPrestation.categorie_img) }}
+        </div>
+
+        <div class="prix">
+            <label for="prix">Prix :</label>
+            {{ form_widget(formAjouterPrestation.prix) }}
+        </div>
+
+        <div class="btn_add">
+            <button type="submit" class="btn">Ajouter la prestation</button>
+        </div>
+    </div>
+
+    {{ form_end(formAjouterPrestation) }}
+
+    <div class="btn_retour">
+        <form action="{{ path('app_prestation') }}" method="get">
+            <button class="btn">Retour à la liste des prestations</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
