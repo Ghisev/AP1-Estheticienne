@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jack-Line Avis{% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="avis">
+            <h1>AVIS<h1>
+            <p>--------------------------------------</p>
+
+            {% for unAvis in lesAvis|reverse %}
+                <li class="nom">{{ unAvis.user.nom }}</li>
+                <li class="date">{{unAvis.date|date('d-m-Y')}}</li>
+                <li class="texte">"{{unAvis.texte}}"</li>
+                <form class="formBoutonSupprimer" action="{{ path('app_supprimerAvis', {'id': unAvis.user.id}) }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ unAvis.id) }}">
+                    <button type="submit" class="boutonAjoutAvis">Supprimer cet avis</button>
+                </form>
+            {% endfor %}  
+        </div>
+    {% elseif is_granted('ROLE_USER') %}
+         <div class="avis">
+            <h1>AVIS<h1>
+            <p>--------------------------------------</p>
+            <form action="{{ path('app_ajoutAvis') }}" method="get">
+                <button class="boutonAjoutAvis" type="submit">Laisser un avis</button>
+            </form>
+
+            {% for unAvis in lesAvis|reverse %}
+                <li class="nom">{{ unAvis.user.nom }}</li>
+                <li class="date">{{unAvis.date|date('d-m-Y')}}</li>
+                <li class="texte">"{{unAvis.texte}}"</li>
+            {% endfor %}  
+        </div>
+    {% else %}
+    <div class="avis">
+            <h1>AVIS<h1>
+            <p>--------------------------------------</p>
+            <p>Connectez vous pour laisser un avis</p>
+
+            {% for unAvis in lesAvis|reverse %}
+                <li class="nom">{{ unAvis.user.nom }}</li>
+                <li class="date">{{unAvis.date|date('d-m-Y')}}</li>
+                <li class="texte">"{{unAvis.texte}}"</li>
+            {% endfor %}  
+        </div>
+    {% endif %}
+{% endblock %}

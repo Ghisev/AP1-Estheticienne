@@ -13,7 +13,9 @@
         <div class="test-jemeurt">
             {% if lapresentation is not empty %}
             <p>{{ lapresentation[0].presentation }}</p>
-            <a href="{{ path('accueil_edit', {'id': lapresentation[0].id}) }}"><button class ="btn_modif">Modifier</button></a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('accueil_edit', {'id': lapresentation[0].id}) }}"><button class ="btn_modif">Modifier</button></a>
+                {% endif %}
             {% endif %}
         </div> 
         <div class="titre_btn1 agbalumo400"><h4 class="h4_accueil">Profitez de nos produits ici</h4></div>

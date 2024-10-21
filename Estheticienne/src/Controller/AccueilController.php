@@ -21,7 +21,7 @@ class AccueilController extends AbstractController
         $lapresentation = [];
         foreach ($presentations as $presentation) {
             $lapresentation[] = [
-                'id' => $presentation ? $presentation->getId() : 'Aucun ID disponible',
+                'id' => $presentation ? $presentation->getId() : 'Aucun id trouvé',
                 'presentation' => $presentation->getPresentation(),
             ];
         }
