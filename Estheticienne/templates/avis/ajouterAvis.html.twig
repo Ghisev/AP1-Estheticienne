@@ -6,10 +6,7 @@
 
     {% if is_granted('ROLE_USER') %}
         <div class="avis">
-            {{form_start(formAjoutAvis)}}
-            {{form_row(formAjoutAvis.description)}}
-            <button class="boutonAjoutAvisForm" type="submit">{{button_label | default('Publier')}}</button>
-            {{form_end(formAjoutAvis)}}
+            {% include "avis/ajouterFormAvis.html.twig" %}
             <form action="{{ path('app_avis') }}" method="get">
                 <button class="boutonAjoutAvis" type="submit">Retour</button>
             </form>

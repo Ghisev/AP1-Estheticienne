@@ -21,9 +21,6 @@ class Avis
     #[ORM\Column(type: Types::TEXT)]
     private ?string $texte = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -49,18 +46,6 @@ class Avis
     public function setTexte(string $texte): static
     {
         $this->texte = $texte;
-
-        return $this;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): static
-    {
-        $this->date = $date;
 
         return $this;
     }
