@@ -1,0 +1,57 @@
+.container {  display: grid;
+    grid-template-columns: 2% 7% 2% 10% 2% 10% 2% 10% 2% 10% 2% 24% 15% 2%;
+    grid-template-rows: 80px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "empty1 img empty2 btn-accueil empty3 btn-produits empty4 btn-prestation empty5 btn-avis empty6 empty7 btn-connexion empty8";
+    background-color: #D89E9D;
+    width: 100%;
+}
+
+.img img {
+    grid-area: img; 
+    max-height: 70px;
+    width: auto;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.empty1 { grid-area: empty1; }
+
+.empty2 { grid-area: empty2; }
+
+.btn-accueil { grid-area: btn-accueil; }
+
+.empty3 { grid-area: empty3; }
+
+.btn-produits { grid-area: btn-produits; }
+
+.empty4 { grid-area: empty4; }
+
+.btn-prestation { grid-area: btn-prestation; }
+
+.empty5 { grid-area: empty5; }
+
+.btn-avis { grid-area: btn-avis; }
+
+.empty6 { grid-area: empty6; }
+
+.empty7 { grid-area: empty7; }
+
+.btn-connexion img { 
+    grid-area: btn-connexion;
+    max-height: 70px;
+    width: auto;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.empty8 { grid-area: empty8; }
+
+a {
+    color: white;
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
