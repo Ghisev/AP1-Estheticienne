@@ -15,10 +15,6 @@ class AvisType extends AbstractType
     {
         $builder
             ->add('texte')
-            ->add('user_id', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'id',
-            ])
         ;
     }
 
