@@ -11,7 +11,7 @@
             {% for unAvis in lesAvis|reverse %}
                 <li class="nom">{{ unAvis.id }}</li>
                 <li class="texte">"{{unAvis.texte}}"</li>
-                <form class="formBoutonSupprimer" action="{{ path('app_supprimerAvis', {'id': unAvis.user.id}) }}" method="post">
+                <form class="formBoutonSupprimer" action="{{ path('app_supprimerAvis', {'id': unAvis.id}) }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ unAvis.id) }}">
                     <button type="submit" class="boutonAjoutAvis">Supprimer cet avis</button>
                 </form>

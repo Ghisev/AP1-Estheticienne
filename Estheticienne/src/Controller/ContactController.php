@@ -47,35 +47,12 @@ class ContactController extends AbstractController
         ]);
     }
 
-
-    #[Route('/contact/ajouter', name: 'app_ajout_contact')]
-    public function ajouter(Request $request, EntityManagerInterface $em): Response
-    {
-        $this->denyAccessUnlessGranted('ROLE_USER');
-
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $contact->setUser($this->getUser());
-            $em->persist($contact);
-            $em->flush();
-
-            $this->addFlash('success', 'Votre contact a été ajouté avec succès.');
-            return $this->redirectToRoute('app_contact');
-        }
-
-        return $this->render('contact/ajouter.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
-
     #[Route('/contact/{id}/supprimer', name: 'app_supprimer_contact')]
     public function supprimer(Contact $contact, EntityManagerInterface $em): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
+        // Supprimer le contact
         $em->remove($contact);
         $em->flush();
 

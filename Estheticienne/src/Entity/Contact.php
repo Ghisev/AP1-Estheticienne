@@ -22,7 +22,7 @@ class Contact
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'contacts')]
     private ?User $user = null;
 
     public function getId(): ?int
