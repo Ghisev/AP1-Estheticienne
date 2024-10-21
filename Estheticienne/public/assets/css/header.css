@@ -1,4 +1,4 @@
-.container_page_presta {  display: grid;
+.container_navbar {  display: grid;
     grid-template-columns: 2% 7% 2% 10% 2% 10% 2% 10% 2% 10% 2% 10% 14% 15% 2%;
     grid-template-rows: 80px;
     grid-auto-columns: 1fr;
