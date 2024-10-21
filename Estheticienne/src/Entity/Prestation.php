@@ -19,6 +19,9 @@ class Prestation
     #[ORM\Column]
     private ?float $prix = null;
 
+    #[ORM\Column]
+    private ?int $categorie = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Prestation
     public function setPrix(float $prix): static
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?int
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(int $categorie): static
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
