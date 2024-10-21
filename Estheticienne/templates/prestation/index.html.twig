@@ -3,18 +3,97 @@
 {% block title %}Hello PrestationController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<link rel="stylesheet" href="../assets/css/style.css">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    {% if condition == 'affichage1' %}
+        <div class="container_page_presta">
+            <div class="categorie">
+                <h2 class="titre_presta agbalumo400">Toutes les prestations</h2>
+                <a class="btn_presta_selected inter400" href="{{ path('app_prestation', { 'condition': 'affichage1' }) }}">Épilation Homme</a>
+                <a class="btn_presta inter400" href="{{ path('app_prestation', { 'condition': 'affichage2' }) }}">Épilation Femme</a>
+                <a class="btn_presta inter400" href="{{ path('app_prestation', { 'condition': 'affichage3' }) }}">Soins pieds et mains</a>
+            </div>
+            <div class="prestations">
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/1.png">
+                    <p class="titre_la_presta inter400">Epilation du maillot</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/2.png">
+                    <p class="titre_la_presta inter400">Epilation du dos</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/3.png">
+                    <p class="titre_la_presta inter400">Epilation des bras</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/4.png">
+                    <p class="titre_la_presta inter400">Epilation du torse</p>
+                </div>
+            </div>
+        </div>
+    {% elseif condition == 'affichage2' %}
+        <div class="container_page_presta">
+            <div class="categorie">
+                <h2 class="titre_presta agbalumo400">Toutes les prestations</h2>
+                <a class="btn_presta inter400" href="{{ path('app_prestation', { 'condition': 'affichage1' }) }}">Épilation Homme</a>
+                <a class="btn_presta_selected inter400" href="{{ path('app_prestation', { 'condition': 'affichage2' }) }}">Épilation Femme</a>
+                <a class="btn_presta inter400" href="{{ path('app_prestation', { 'condition': 'affichage3' }) }}">Soins pieds et mains</a>
+            </div>
+            <div class="prestations">
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/1.png">
+                    <p class="titre_la_presta inter400">Epilation du maillot</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/5.png">
+                    <p class="titre_la_presta inter400">Cire diamant sublime</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/6.png">
+                    <p class="titre_la_presta inter400">Soin exfoliant</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/8.png">
+                    <p class="titre_la_presta inter400">Epilation sourcils et visage</p>
+                </div>
+                                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/9.png">
+                    <p class="titre_la_presta inter400">Epilation aisselles et bras</p>
+                </div>
+                                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/10.png">
+                    <p class="titre_la_presta inter400">Epilation jambes et cuisses</p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container_page_presta">
+            <div class="categorie">
+                <h2 class="titre_presta agbalumo400">Toutes les prestations</h2>
+                <a class="btn_presta inter400" href="{{ path('app_prestation', { 'condition': 'affichage1' }) }}">Épilation Homme</a>
+                <a class="btn_presta inter400" href="{{ path('app_prestation', { 'condition': 'affichage2' }) }}">Épilation Femme</a>
+                <a class="btn_presta_selected inter400" href="{{ path('app_prestation', { 'condition': 'affichage3' }) }}">Soins pieds et mains</a>
+            </div>
+            <div class="prestations">
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/7.png">
+                    <p class="titre_la_presta inter400">Soins Calluspeeling</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/1.png">
+                    <p class="titre_la_presta inter400">Soins mains et pieds</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/5.png">
+                    <p class="titre_la_presta inter400">Vernis semi-permanant</p>
+                </div>
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/6.png">
+                    <p class="titre_la_presta inter400">Ongles en gel</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/evang/Documents/BTS/2ème Année/1 - SG/AP/GitKraken/AP1-Estheticienne/Estheticienne/src/Controller/PrestationController.php</code></li>
-        <li>Your template at <code>C:/Users/evang/Documents/BTS/2ème Année/1 - SG/AP/GitKraken/AP1-Estheticienne/Estheticienne/templates/prestation/index.html.twig</code></li>
-    </ul>
-</div>
 {% endblock %}
