@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un contact{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <h1>Ajouter un contact</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Envoyer</button>
+    {{ form_end(form) }}
+
+    <div>
+        <a href="{{ path('app_contact') }}">Retour</a>
+    </div>
+{% endblock %}

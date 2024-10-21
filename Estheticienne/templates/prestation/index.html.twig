@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les prestations{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="../assets/css/style.css">
+
+    <div class="container_page_presta">
+        <div class="categorie">
+            <h2 class="titre_presta agbalumo400">Toutes les prestations</h2>
+            <a class="btn_presta {% if condition == 'affichage1' %}btn_presta_selected{% endif %} inter400" href="{{ path('app_prestation', { 'condition': 'affichage1' }) }}">Épilation Homme</a>
+            <a class="btn_presta {% if condition == 'affichage2' %}btn_presta_selected{% endif %} inter400" href="{{ path('app_prestation', { 'condition': 'affichage2' }) }}">Épilation Femme</a>
+            <a class="btn_presta {% if condition == 'affichage3' %}btn_presta_selected{% endif %} inter400" href="{{ path('app_prestation', { 'condition': 'affichage3' }) }}">Soins pieds et mains</a>
+        </div>
+        <div class="prestations">
+            {% for prestation in prestations %}
+                <div class="une_prestation">
+                    <img class="img_presta" src="../assets/img/presta/{{ prestation.categorieImg }}.png">
+                    <p class="titre_la_presta inter400">{{ prestation.libelle }}</p>
+                    <p class="prix_presta inter400">{{ prestation.prix }} €</p>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('app_prestation_modifier', { 'id': prestation.id }) }}">Modifier</a>
+                        <form method="post" action="{{ path('app_prestation_supprimer', { 'id': prestation.id }) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette prestation ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ prestation.id) }}">
+                            <button class="btn">Supprimer</button>
+                        </form>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="add-prestation-btn">
+                <a class="btn" href="{{ path('app_prestation_ajouter') }}">Ajouter une nouvelle prestation</a>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

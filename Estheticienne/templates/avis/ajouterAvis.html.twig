@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Laissez un avis{% endblock %}
+
+{% block body %}
+    <div class="avis">
+        {% if is_granted('ROLE_USER') %}
+            {{ form_start(formAjoutAvis) }}
+                {{ form_row(formAjoutAvis.texte) }}
+                <button class="boutonAjoutAvisForm" type="submit">{{ button_label | default('Publier') }}</button>
+            {{ form_end(formAjoutAvis) }}
+            
+            <form action="{{ path('app_avis') }}" method="get">
+                <button class="boutonAjoutAvis" type="submit">Retour</button>
+            </form>
+        {% else %}
+            <p class="alert alert-warning">
+                Vous devez être connecté pour laisser un avis. 
+                <a href="{{ path('app_login') }}">Connectez-vous ici</a>.
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

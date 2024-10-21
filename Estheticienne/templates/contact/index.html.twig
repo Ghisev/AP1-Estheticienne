@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jack-Line Contacts{% endblock %}
+
+{% block body %}
+    <div class="contact">
+        <h1>CONTACT</h1>
+        <p>--------------------------------------</p>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            {% for contact in contacts %}
+                <li class="nom">{{ contact.nom }} {{ contact.prenom }}</li>
+                <li class="texte">{{ contact.numero }}</li>
+                <form class="formBoutonSupprimer" action="{{ path('app_supprimer_contact', {'id': contact.id}) }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}">
+                    <button type="submit" class="boutonAjoutAvis">Supprimer ce contact</button>
+                </form>
+                <br>
+            {% endfor %}
+        {% elseif is_granted('ROLE_USER') %}
+            <h2>Ajouter un contact</h2>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="boutonAjoutAvis" type="submit">Laisser votre contact</button>
+            {{ form_end(form) }}
+        {% else %}
+            <p>Connectez-vous pour laisser un contact</p>
+            {% for contact in contacts %}
+                <li class="nom">{{ contact.nom }} {{ contact.prenom }}</li>
+                <li class="texte">{{ contact.numero }}</li>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

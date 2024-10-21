@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jack-Line Accueil{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+
+<div class="acceuil">
+    <div class="container-acceuil">
+        <div class="titre agbalumo400"><h1 class="titre_accueil">Bienvenue chez Jack-Line !</h1></div>
+        <div class="test-jemeurt">
+            {% if lapresentation is not empty %}
+            <p>{{ lapresentation[0].presentation }}</p>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('accueil_edit', {'id': lapresentation[0].id}) }}"><button class ="btn_modif">Modifier</button></a>
+                {% endif %}
+            {% endif %}
+        </div> 
+        <div class="titre_btn1 agbalumo400"><h4 class="h4_accueil">Profitez de nos produits ici</h4></div>
+        <div class="titre_btn2 agbalumo400"><h4 class="h4_accueil">Profitez de nos prestation ici</h4></div>
+        <div class="btn1"><a class="btn_acc inter400" {#href="{{path('app_produits')}}"#} >Produits ></a></div>
+        <div class="btn2"><a class="btn_acc inter400" {#href="{{path('app_prestation')}}"#} >Prestations ></a></div>
+    </div>
+</div>
+{% endblock %}
