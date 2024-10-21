@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Avis;
-use App\Entity\User;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,12 +12,7 @@ class AvisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('texte')
-            ->add('user_id', EntityType::class, [
-                'class' => User::class,
-'choice_label' => 'id',
-            ])
-        ;
+            ->add('texte');  // No need to add 'user', it will be set in the controller
     }
 
     public function configureOptions(OptionsResolver $resolver): void

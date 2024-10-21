@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AvisRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\DBAL\Types\Types;
 use App\Entity\User;
 
 #[ORM\Entity(repositoryClass: AvisRepository::class)]
@@ -21,7 +21,6 @@ class Avis
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $texte = null;
-
 
     public function getId(): ?int
     {
@@ -51,5 +50,4 @@ class Avis
 
         return $this;
     }
-
 }

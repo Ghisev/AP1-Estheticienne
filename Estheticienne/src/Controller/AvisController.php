@@ -39,7 +39,7 @@ class AvisController extends AbstractController
             $user = $this->getUser();
 
             // Set the user for the Avis entity
-            $avis->setUser($user);
+            $avis->setUser($this->getUser());
 
             // Persist the Avis entity and save to the database
             $em->persist($avis);
