@@ -3,17 +3,41 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<link rel="stylesheet" href="../assets/css/register.css">
 
-    {{ form_errors(registrationForm) }}
+<h1 class="agbalumo600 boir">Inscription</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+{{ form_start(registrationForm) }}  {# Démarre le formulaire #}
+{{ form_errors(registrationForm) }}  {# Affiche les erreurs générales du formulaire #}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+<div class="container_register">
+    <!-- Email -->
+    <div class="txt-mail">
+        {{ form_label(registrationForm.email, null, {'label_attr': {'class': 'form-label'}}) }}
+    </div>
+    <div class="input-mail">
+        {{ form_widget(registrationForm.email, { 'attr': {'class': 'form-input'} }) }}
+    </div>
+
+    <!-- Password -->
+    <div class="txt-mdp">
+        {{ form_label(registrationForm.plainPassword, 'Password', {'label_attr': {'class': 'form-label'}}) }}
+    </div>
+    <div class="input-mdp">
+        {{ form_widget(registrationForm.plainPassword, { 'attr': {'class': 'form-input'} }) }}
+    </div>
+
+    <!-- Agree Terms -->
+    <div class="checkbox">
+        {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'form-input-checkbox'} }) }}
+    </div>
+
+    <!-- Submit Button -->
+    <div class="bouton">
+        <button type="submit" class="btn_acc inter400">Register</button>
+    </div>
+</div>
+
+{{ form_end(registrationForm) }} {# Ferme le formulaire #}
 {% endblock %}
