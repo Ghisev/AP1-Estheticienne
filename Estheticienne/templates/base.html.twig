@@ -2,13 +2,37 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+
+        {# connexion google font #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        {# google fonts #}
+        <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+        <link rel="icon" href="">
+        <link href="assets\css\header.css" rel="stylesheet">
+        <div class="container">
+            <div class="img"><img href="{{path('app_accueil')}}" class="logo-img" src="../assets/img/logos/1tr.png"></div>
+            <div class="empty1"></div>
+            <div class="empty2"></div>
+            <div class="btn-accueil"><a href="{{path('app_accueil')}}">Accueil</a></div>
+            <div class="empty3"></div>
+            <div class="btn-produits"><a href="{{path('app_produits')}}">Produits</a></div>
+            <div class="empty4"></div>
+            <div class="btn-prestation"><a href="{{ path('app_prestation', { 'condition': 'affichage1' }) }}">Prestation</a></div>
+            <div class="empty5"></div>
+            <div class="btn-avis"><a href="{{path('app_avis')}}">Avis</a></div>
+            <div class="empty6"></div>
+            <div class="empty7"><a href="{{path('app_login')}}">Connexion</a></div>
+            <div class="btn-connexion"><a href="{{path('app_register')}}">Créer un compte</a></div>
+            <div class="empty8"></div>
+        </div>
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
