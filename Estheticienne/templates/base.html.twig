@@ -29,7 +29,7 @@
                 <div class="empty6"></div>
                 <div class="btn-contact"><a {#href="{{path('app_contact')}}"#} >Contact</a></div>
                 <div class="empty7"></div>
-                <div class="deconnexion"><a {#href="{{path('app_login')}}"#} >Déconnexion</a></div>
+                <div class="deconnexion"><a href="{{path('app_logout')}}" >Déconnexion</a></div>
                 <div class="empty8"></div>
             </div>
         {% else %}
@@ -47,7 +47,7 @@
                 <div class="empty6"></div>
                 <div class="btn-contact"><a {#href="{{path('app_contact')}}"#} >Contact</a></div>
                 <div class="empty7"></div>
-                <div class="connexion"><a {#href="{{path('app_login')}}"#} >Connexion</a></div>
+                <div class="connexion"><a href="{{path('app_login')}}" >Connexion</a></div>
                 <div class="empty8"></div>
                 <div class="inscription"><a href="{{path('app_register')}}" >Créer un compte</a></div>
                 <div class="empty9"></div>
