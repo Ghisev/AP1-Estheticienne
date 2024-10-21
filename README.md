@@ -9,7 +9,8 @@
 - **Contact**
 ### voici les accès utilisateurs
 ## Identifiant | mot de passe 
-- **User1@gmail.com | User123**
+- **user1@gmail.com | User123 - Admin**
+- **user2@gmail.com | User123**
 
 ### Prérequis
 - PHP 8.x
