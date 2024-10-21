@@ -14,28 +14,16 @@ class Avis
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $avis = null;
-
     #[ORM\ManyToOne(inversedBy: 'avis')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user_id = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $texte = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getAvis(): ?string
-    {
-        return $this->avis;
-    }
-
-    public function setAvis(string $avis): static
-    {
-        $this->avis = $avis;
-
-        return $this;
     }
 
     public function getUserId(): ?User
@@ -46,6 +34,18 @@ class Avis
     public function setUserId(?User $user_id): static
     {
         $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    public function getTexte(): ?string
+    {
+        return $this->texte;
+    }
+
+    public function setTexte(string $texte): static
+    {
+        $this->texte = $texte;
 
         return $this;
     }

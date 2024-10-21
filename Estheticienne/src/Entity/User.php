@@ -41,6 +41,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Avis::class, mappedBy: 'user_id')]
     private Collection $avis;
 
+
+
     public function __construct()
     {
         $this->avis = new ArrayCollection();

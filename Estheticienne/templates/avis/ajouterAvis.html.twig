@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Laissez un avis{% endblock %}
+
+{% block body %}
+
+    {% if is_granted('ROLE_USER') %}
+        <div class="avis">
+            {% include "avis/ajouterFormAvis.html.twig" %}
+            <form action="{{ path('app_avis') }}" method="get">
+                <button class="boutonAjoutAvis" type="submit">Retour</button>
+            </form>
+        </div>
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}
