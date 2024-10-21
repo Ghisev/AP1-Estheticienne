@@ -173,7 +173,7 @@ body{
   
   .container_page_presta {  display: grid;
       grid-template-columns: 100px 300px 100px 600px 1fr;
-      grid-template-rows: 150px 598px 1fr;
+      grid-template-rows: 150px 700px 1fr;
       grid-auto-columns: 1fr;
       gap: 0px 0px;
       grid-auto-flow: row;
@@ -257,4 +257,87 @@ body{
       height: 40px;
       border-radius: 5px;
       width: 80px;
+  }
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.container_ajouter_prestation {  display: grid;
+    grid-template-columns: 1fr 300px 50px 300px 1fr;
+    grid-template-rows: 150px 80px 80px 80px 80px 80px 80px 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . . . ."
+      ". titre titre titre ."
+      ". libelle vide input_libelle ."
+      ". prix vide input_prix ."
+      ". categorie vide input_categorie ."
+      ". categorie_img vide input_categorie_img ."
+      ". btn_retour vide btn_add ."
+      ". . . . .";
+  }
+  
+  .titre { grid-area: titre; }
+  
+  .libelle { grid-area: libelle; }
+  
+  .input_libelle { grid-area: input_libelle; }
+  
+  .input_prix { grid-area: input_prix; }
+  
+  .input_categorie { grid-area: input_categorie; }
+  
+  .input_categorie_img { grid-area: input_categorie_img; }
+  
+  .btn_add { grid-area: btn_add; }
+  
+  .btn_retour { grid-area: btn_retour; }
+  
+  .categorie_img { grid-area: categorie_img; }
+  
+  .categorie { grid-area: categorie; }
+  
+  .prix { grid-area: prix; }
+  
+  .vide { grid-area: vide; }
+
+  .titre_add_presta{
+    text-align: center;
+    width: auto;
+  }
+
+  .titre{
+    width: auto;
   }
